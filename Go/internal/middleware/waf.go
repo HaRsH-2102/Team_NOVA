@@ -13,23 +13,28 @@ var patterns = []*regexp.Regexp{
 	regexp.MustCompile(`(?i)DROP TABLE`),
 	regexp.MustCompile(`--`),
 	regexp.MustCompile(`;`),
+	regexp.MustCompile(`(?i)<script>`),
 }
 
 func WAFMiddleware(next http.Handler) http.Handler {
 	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-		// Read body
-		bodyBytes, _ := io.ReadAll(r.Body)
-		bodyString := string(bodyBytes)
+		// 🔥 Step 1: Read body safely
+		bodyBytes, err := io.ReadAll(r.Body)
+		if err != nil {
+			http.Error(w, "Error reading request", 500)
+			return
+		}
 
-		// Restore body (VERY IMPORTANT)
+		// 🔥 Step 2: ALWAYS restore body BEFORE anything
 		r.Body = io.NopCloser(bytes.NewBuffer(bodyBytes))
 
-		data := r.URL.String() + bodyString
+		// 🔥 Step 3: Use copy for scanning
+		data := r.URL.String() + string(bodyBytes)
 
 		for _, p := range patterns {
 			if p.MatchString(data) {
-				http.Error(w, "SQL Injection Detected", http.StatusForbidden)
+				http.Error(w, "Malicious Request Blocked", http.StatusForbidden)
 				return
 			}
 		}

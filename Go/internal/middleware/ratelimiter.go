@@ -2,9 +2,10 @@ package middleware
 
 import (
 	"net/http"
-	"strings"
 	"sync"
 	"time"
+
+	"nova-shield/internal/config"
 )
 
 type clientData struct {
@@ -15,19 +16,27 @@ type clientData struct {
 var store = make(map[string]*clientData)
 var mu sync.Mutex
 
-func getIP(addr string) string {
-	// Remove port from IP
-	if strings.Contains(addr, ":") {
-		return strings.Split(addr, ":")[0]
+func findRule(r *http.Request, rules []config.RateLimit) *config.RateLimit {
+	for _, rule := range rules {
+		if r.URL.Path == rule.Path && r.Method == rule.Method {
+			return &rule
+		}
 	}
-	return addr
+	return nil
 }
 
-func RateLimiter(limit int, window time.Duration) func(http.Handler) http.Handler {
+func RateLimiter(rules []config.RateLimit) func(http.Handler) http.Handler {
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
-			ip := getIP(r.RemoteAddr) // ✅ FIXED
+			ip := GetIP(r.RemoteAddr)
+			rule := findRule(r, rules)
+
+			if rule == nil {
+				next.ServeHTTP(w, r)
+				return
+			}
+
 			key := ip + r.URL.Path
 
 			mu.Lock()
@@ -36,27 +45,24 @@ func RateLimiter(limit int, window time.Duration) func(http.Handler) http.Handle
 			data, exists := store[key]
 			now := time.Now()
 
-			// First request
 			if !exists {
 				store[key] = &clientData{1, now}
 				next.ServeHTTP(w, r)
 				return
 			}
 
-			// Window expired → reset
-			if now.Sub(data.startTime) > window {
+			if now.Sub(data.startTime) > time.Duration(rule.WindowSeconds)*time.Second {
 				store[key] = &clientData{1, now}
 				next.ServeHTTP(w, r)
 				return
 			}
 
-			// Limit exceeded
-			if data.count >= limit {
+			if data.count >= rule.Limit {
+				LogBlocked(ip, "Rate limit exceeded")
 				http.Error(w, "Too Many Requests", http.StatusTooManyRequests)
 				return
 			}
 
-			// Increment
 			data.count++
 			next.ServeHTTP(w, r)
 		})

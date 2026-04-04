@@ -3,7 +3,6 @@ package main
 import (
 	"log"
 	"net/http"
-	"time"
 
 	"nova-shield/internal/config"
 	"nova-shield/internal/middleware"
@@ -12,7 +11,7 @@ import (
 
 func main() {
 
-	cfg, err := config.LoadConfig("../../config.json")
+	cfg, err := config.LoadConfig("config.json")
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -24,9 +23,10 @@ func main() {
 
 	handler := http.Handler(p)
 
+	// Order matters
 	handler = middleware.BlacklistMiddleware(cfg.Security.BlacklistedIPs)(handler)
 	handler = middleware.WAFMiddleware(handler)
-	handler = middleware.RateLimiter(5, 60*time.Second)(handler)
+	handler = middleware.RateLimiter(cfg.RateLimits)(handler)
 
 	log.Println("Proxy running on port", cfg.Server.ListenPort)
 
