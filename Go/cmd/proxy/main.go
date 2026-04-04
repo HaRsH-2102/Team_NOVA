@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"time"
 
 	"nova-shield/internal/config"
 	"nova-shield/internal/middleware"
@@ -23,12 +24,22 @@ func main() {
 
 	handler := http.Handler(p)
 
-	// Order matters
 	handler = middleware.BlacklistMiddleware(cfg.Security.BlacklistedIPs)(handler)
 	handler = middleware.WAFMiddleware(handler)
 	handler = middleware.RateLimiter(cfg.RateLimits)(handler)
 
-	log.Println("Proxy running on port", cfg.Server.ListenPort)
+	// 🔥 HIGH PERFORMANCE SERVER
+	server := &http.Server{
+		Addr:              ":9090",
+		Handler:           handler,
+		ReadTimeout:       5 * time.Second,
+		WriteTimeout:      10 * time.Second,
+		IdleTimeout:       120 * time.Second,
+		MaxHeaderBytes:    1 << 20,
+		ReadHeaderTimeout: 2 * time.Second,
+	}
 
-	http.ListenAndServe(":9090", handler)
+	log.Println("🚀 Proxy running on port", cfg.Server.ListenPort)
+
+	log.Fatal(server.ListenAndServe())
 }
