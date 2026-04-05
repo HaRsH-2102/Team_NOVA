@@ -10,60 +10,70 @@ import (
 
 type clientData struct {
 	count     int
-	startTime time.Time
+	startTime int64 // 🔥 use int64 (faster)
+	mu        sync.Mutex
 }
 
-var store = make(map[string]*clientData)
-var mu sync.Mutex
+var store sync.Map
 
-func findRule(r *http.Request, rules []config.RateLimit) *config.RateLimit {
-	for _, rule := range rules {
-		if r.URL.Path == rule.Path && r.Method == rule.Method {
-			return &rule
-		}
+type ruleKey struct {
+	path   string
+	method string
+}
+
+var ruleMap map[ruleKey]config.RateLimit
+
+func initRules(rules []config.RateLimit) {
+	ruleMap = make(map[ruleKey]config.RateLimit)
+	for _, r := range rules {
+		ruleMap[ruleKey{r.Path, r.Method}] = r
 	}
-	return nil
 }
 
 func RateLimiter(rules []config.RateLimit) func(http.Handler) http.Handler {
+
+	initRules(rules)
+
 	return func(next http.Handler) http.Handler {
 		return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
 
 			ip := GetIP(r.RemoteAddr)
-			rule := findRule(r, rules)
 
-			if rule == nil {
+			rule, ok := ruleMap[ruleKey{r.URL.Path, r.Method}]
+			if !ok {
 				next.ServeHTTP(w, r)
 				return
 			}
 
-			key := ip + r.URL.Path
+			key := ip + ":" + r.URL.Path
 
-			mu.Lock()
-			defer mu.Unlock()
+			now := time.Now().Unix()
 
-			data, exists := store[key]
-			now := time.Now()
+			val, _ := store.LoadOrStore(key, &clientData{
+				startTime: now,
+			})
 
-			if !exists {
-				store[key] = &clientData{1, now}
-				next.ServeHTTP(w, r)
-				return
-			}
+			data := val.(*clientData)
 
-			if now.Sub(data.startTime) > time.Duration(rule.WindowSeconds)*time.Second {
-				store[key] = &clientData{1, now}
-				next.ServeHTTP(w, r)
-				return
+			data.mu.Lock()
+
+			window := int64(rule.WindowSeconds)
+
+			// reset window
+			if now-data.startTime > window {
+				data.count = 0
+				data.startTime = now
 			}
 
 			if data.count >= rule.Limit {
-				LogBlocked(ip, "Rate limit exceeded")
+				data.mu.Unlock()
 				http.Error(w, "Too Many Requests", http.StatusTooManyRequests)
 				return
 			}
 
 			data.count++
+			data.mu.Unlock()
+
 			next.ServeHTTP(w, r)
 		})
 	}
