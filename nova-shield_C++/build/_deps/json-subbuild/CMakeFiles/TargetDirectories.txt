@@ -1,0 +1,3 @@
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/_deps/json-subbuild/CMakeFiles/json-populate.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/_deps/json-subbuild/CMakeFiles/edit_cache.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/_deps/json-subbuild/CMakeFiles/rebuild_cache.dir

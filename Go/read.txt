@@ -1,0 +1,289 @@
+# 🔥 Nova Shield — AI-Ready Cybersecurity API Gateway (Golang)
+
+Nova Shield is a **high-performance reverse proxy and security gateway** built in Golang.
+It protects backend APIs from malicious traffic using **rate limiting, WAF, IP blocking, and real-time monitoring**.
+
+---
+
+# 🚀 Features
+
+## 🔐 Security Layer
+
+* ✅ Rate Limiting (per IP + per route)
+* ✅ Web Application Firewall (WAF)
+
+  * SQL Injection Detection
+  * XSS Detection
+  * Command Injection Protection
+* ✅ IP Blacklisting
+
+## ⚡ Performance
+
+* ✅ Handles **5,000–10,000 requests under load**
+* ✅ Optimized for high concurrency
+* ✅ Connection pooling & worker-based load handling
+
+## 📊 Monitoring
+
+* ✅ Real-time request tracking
+* ✅ Logs for blocked requests
+* ✅ Frontend dashboard (React)
+
+---
+
+# 🏗️ Architecture
+
+```
+Client (Frontend / Attack Script)
+        ↓
+🚀 Nova Shield Proxy (Port 9090)
+ ├── Rate Limiter
+ ├── WAF
+ ├── Blacklist
+ ├── Logger
+        ↓
+🏦 Backend API (Port 8080)
+```
+
+---
+
+# 📁 Project Structure
+
+```
+nova-shield/
+│
+├── backend/
+│   └── server.go
+│
+├── cmd/proxy/
+│   └── main.go
+│
+├── internal/
+│   ├── config/
+│   ├── middleware/
+│   │   ├── ratelimiter.go
+│   │   ├── waf.go
+│   │   ├── blacklist.go
+│   │   ├── logger.go
+│   │   └── utils.go
+│   └── proxy/
+│       └── proxy.go
+│
+├── frontend/        # React dashboard
+├── atk.go           # Attack simulator
+├── loadtest.go      # Load testing script
+├── config.json
+└── go.mod
+```
+
+---
+
+# ⚙️ Installation & Setup
+
+## 1️⃣ Clone Repository
+
+```
+git clone <your-repo-url>
+cd nova-shield
+```
+
+---
+
+## 2️⃣ Install Go Dependencies
+
+```
+go mod tidy
+```
+
+---
+
+# ▶️ How to Run the Project
+
+---
+
+## 🔹 Step 1 — Run Backend Server
+
+Open Terminal 1:
+
+```
+cd backend
+go run server.go
+```
+
+👉 Runs on:
+
+```
+http://localhost:8080
+```
+
+---
+
+## 🔹 Step 2 — Run Proxy Server
+
+Open Terminal 2:
+
+```
+cd ..
+go run cmd/proxy/main.go
+```
+
+👉 Runs on:
+
+```
+http://localhost:9090
+```
+
+---
+
+## 🔹 Step 3 — Run Frontend Dashboard
+
+Open Terminal 3:
+
+```
+cd frontend
+npm install
+npm run dev
+```
+
+👉 Open in browser:
+
+```
+http://localhost:5173
+```
+
+---
+
+# 🧪 Testing the System
+
+---
+
+## ✅ Normal Request
+
+```
+GET http://localhost:9090/balance
+```
+
+---
+
+## 🔐 Login Request
+
+```
+POST http://localhost:9090/login
+```
+
+```json
+{
+  "username": "admin",
+  "password": "123"
+}
+```
+
+---
+
+## 🚫 SQL Injection Test
+
+```json
+{
+  "username": "admin' OR '1'='1",
+  "password": "123"
+}
+```
+
+👉 Response:
+
+```
+403 Forbidden
+```
+
+---
+
+## 🚫 Rate Limiting Test
+
+Send multiple requests:
+
+👉 After limit:
+
+```
+429 Too Many Requests
+```
+
+---
+
+# ⚡ Load Testing
+
+Run:
+
+```
+go run loadtest.go
+```
+
+👉 Simulates:
+
+* High traffic
+* Controlled concurrency
+* Performance metrics
+
+---
+
+# 🔥 Attack Simulation
+
+Run:
+
+```
+go run atk.go
+```
+
+👉 Simulates:
+
+* Brute force attacks
+* SQL injection
+* XSS attacks
+* Burst traffic
+
+---
+
+# 📊 Expected Results
+
+```
+✔ Legit requests allowed
+✔ Malicious requests blocked
+✔ Stable under heavy load
+✔ Minimal errors
+```
+
+---
+
+# 🧠 Key Learnings
+
+* Handling high concurrency in Go
+* Building secure API gateways
+* Preventing real-world attacks
+* Load testing & performance tuning
+* Debugging race conditions
+
+---
+
+# 🚀 Future Improvements
+
+* 🔥 AI-based adaptive rate limiting
+* 🔥 Redis distributed limiter
+* 🔥 JWT authentication
+* 🔥 Advanced dashboard with charts
+* 🔥 Geo-IP blocking
+
+---
+
+# 🎤 Project Summary
+
+Nova Shield acts as a **protective security layer** in front of backend services, ensuring that only legitimate and safe traffic reaches the server, while blocking malicious or excessive requests efficiently.
+
+---
+
+# 🏆 Author
+
+👤 Onkar kalyankar
+🎓 B.Tech AI & Data Science
+
+---
+
+# ⭐ If you like this project, give it a star!

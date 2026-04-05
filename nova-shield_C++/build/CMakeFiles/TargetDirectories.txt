@@ -1,0 +1,5 @@
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/CMakeFiles/nova-shield.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/CMakeFiles/edit_cache.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/CMakeFiles/rebuild_cache.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/_deps/json-build/CMakeFiles/edit_cache.dir
+C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build/_deps/json-build/CMakeFiles/rebuild_cache.dir

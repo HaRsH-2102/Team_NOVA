@@ -1,0 +1,74 @@
+[
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\config\\config.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\config\\config.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/config/config.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/config/config.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\main.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\main.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/main.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/main.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\middleware\\blacklist.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\middleware\\blacklist.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/middleware/blacklist.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/middleware/blacklist.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\middleware\\jwt.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\middleware\\jwt.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/middleware/jwt.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/middleware/jwt.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\middleware\\rate_limiter.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\middleware\\rate_limiter.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/middleware/rate_limiter.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/middleware/rate_limiter.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\middleware\\waf.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\middleware\\waf.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/middleware/waf.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/middleware/waf.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\models\\response.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\models\\response.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/models/response.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/models/response.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\proxy\\proxy.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\proxy\\proxy.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/proxy/proxy.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/proxy/proxy.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\server\\connection.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\server\\connection.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/server/connection.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/server/connection.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\server\\server.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\server\\server.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/server/server.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/server/server.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\utils\\http_parser.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\utils\\http_parser.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/utils/http_parser.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/utils/http_parser.cpp.obj"
+},
+{
+  "directory": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/build",
+  "command": "C:\\msys64\\mingw64\\bin\\c++.exe  @CMakeFiles/nova-shield.dir/includes_CXX.rsp -std=gnu++17 -o CMakeFiles\\nova-shield.dir\\src\\utils\\logger.cpp.obj -c C:\\Users\\onkar\\Projects\\Go_lang\\New_C\\nova-shield\\src\\utils\\logger.cpp",
+  "file": "C:/Users/onkar/Projects/Go_lang/New_C/nova-shield/src/utils/logger.cpp",
+  "output": "CMakeFiles/nova-shield.dir/src/utils/logger.cpp.obj"
+}
+]

@@ -1,13 +1,14 @@
 {
   "server": {
     "listen_port": 9090,
-    "backend_url": "http://localhost:8080"
+    "backend_host": "127.0.0.1",
+    "backend_port": 8080
   },
   "rate_limits": [
     {
       "path": "/login",
       "method": "POST",
-      "limit": 10,
+      "limit": 5,
       "window_seconds": 60
     },
     {
@@ -18,6 +19,11 @@
     }
   ],
   "security": {
-    "blacklisted_ips": ["192.168.1.10"]
+    "block_sql_injection": true,
+    "blacklisted_ips": ["192.168.1.10", "10.0.0.5"]
+  },
+  "jwt": {
+    "protected_routes": ["/balance", "/transfer"],
+    "secret": "super_secret_key"
   }
 }
