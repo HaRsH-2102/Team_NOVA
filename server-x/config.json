@@ -1,0 +1,47 @@
+{
+  "server": {
+    "listen_port": 9090,
+    "backend_url": "http://127.0.0.1:8080"
+  },
+  "rate_limits": [
+    {
+      "path": "/getAllUsers",
+      "method": "GET",
+      "limit": 100,
+      "window_seconds": 60
+    },
+    {
+      "path": "/login",
+      "method": "POST",
+      "limit": 5,
+      "window_seconds": 60
+    },
+    {
+      "path": "/balance",
+      "method": "GET",
+      "limit": 100,
+      "window_seconds": 60
+    },
+    {
+      "path": "/transfer",
+      "method": "POST",
+      "limit": 20,
+      "window_seconds": 60
+    }
+  ],
+  "security": {
+    "block_sql_injection": true,
+    "block_xss": true,
+    "block_path_traversal": true,
+    "block_command_injection": true,
+    "blacklisted_ips": [
+      "203.0.113.42"
+    ],
+    "trust_demo_ip_header": true,
+    "demo_ip_header": "x-demo-client-ip"
+  },
+  "observability": {
+    "event_history_limit": 120,
+    "traffic_window_seconds": 40
+  }
+}

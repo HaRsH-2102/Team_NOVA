@@ -1,0 +1,32 @@
+{
+  "name": "nova-shield-pipeline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "High-performance reverse proxy and API gateway with WAF, rate limits, live dashboard, and 5k load tooling.",
+  "scripts": {
+    "dev": "concurrently -k -n backend,proxy,dashboard \"npm run dev:backend\" \"npm run dev:proxy\" \"npm run dev:dashboard\"",
+    "start": "concurrently -k -n backend,proxy \"npm run dev:backend\" \"npm run dev:proxy\"",
+    "dev:backend": "node backend/server.mjs",
+    "dev:proxy": "node proxy/server.mjs",
+    "dev:dashboard": "npm --prefix dashboard run dev -- --host 0.0.0.0",
+    "build:dashboard": "npm --prefix dashboard run build",
+    "preview:dashboard": "npm --prefix dashboard run preview -- --host 0.0.0.0",
+    "smoke": "node scripts/smoke-test.mjs",
+    "load:5k": "node scripts/load-5000.mjs"
+  },
+  "keywords": [
+    "proxy",
+    "api-gateway",
+    "rate-limiter",
+    "waf",
+    "dashboard"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/cors": "^11.2.0",
+    "concurrently": "^9.2.1",
+    "fastify": "^5.8.4",
+    "pino-pretty": "^13.1.3"
+  }
+}
