@@ -1,0 +1,19 @@
+config:
+  target: "http://localhost:9090"
+  phases:
+    - duration: 30
+      arrivalRate: 200
+
+  processor: "./processor.js"   # ✅ IMPORTANT
+
+scenarios:
+  - flow:
+      - function: generateIP
+      - post:
+          url: "/login"
+          headers:
+            x-forwarded-for: "{{ ip }}"
+            Content-Type: "application/json"
+          json:
+            username: "admin"
+            password: "123"
