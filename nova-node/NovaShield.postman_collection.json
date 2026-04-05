@@ -1,0 +1,77 @@
+{
+	"info": {
+		"name": "Nova Shield Security Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1. Direct Backend Access (Vulnerable - Port 8080)",
+			"item": [
+				{
+					"name": "Valid Login",
+					"request": {
+						"method": "POST",
+						"url": { "raw": "http://localhost:8080/login", "host": ["localhost"], "port": "8080", "path": ["login"] },
+						"header": [ { "key": "Content-Type", "value": "application/json" } ],
+						"body": { "mode": "raw", "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123\"\n}" }
+					}
+				},
+				{
+					"name": "SQL Injection (Backend allows it)",
+					"request": {
+						"method": "POST",
+						"url": { "raw": "http://localhost:8080/login", "host": ["localhost"], "port": "8080", "path": ["login"] },
+						"header": [ { "key": "Content-Type", "value": "application/json" } ],
+						"body": { "mode": "raw", "raw": "{\n    \"username\": \"admin' OR '1'='1\",\n    \"password\": \"x\"\n}" }
+					}
+				}
+			]
+		},
+		{
+			"name": "2. Proxy Access (Protected - Port 9090)",
+			"item": [
+				{
+					"name": "Valid Login (Allowed)",
+					"request": {
+						"method": "POST",
+						"url": { "raw": "http://localhost:9090/login", "host": ["localhost"], "port": "9090", "path": ["login"] },
+						"header": [ { "key": "Content-Type", "value": "application/json" } ],
+						"body": { "mode": "raw", "raw": "{\n    \"username\": \"admin\",\n    \"password\": \"123\"\n}" }
+					}
+				},
+				{
+					"name": "SQL Injection (Blocked)",
+					"request": {
+						"method": "POST",
+						"url": { "raw": "http://localhost:9090/login", "host": ["localhost"], "port": "9090", "path": ["login"] },
+						"header": [ { "key": "Content-Type", "value": "application/json" } ],
+						"body": { "mode": "raw", "raw": "{\n    \"username\": \"admin' OR '1'='1\",\n    \"password\": \"x\"\n}" }
+					}
+				},
+				{
+					"name": "XSS Attack (Blocked)",
+					"request": {
+						"method": "POST",
+						"url": { "raw": "http://localhost:9090/login", "host": ["localhost"], "port": "9090", "path": ["login"] },
+						"header": [ { "key": "Content-Type", "value": "application/json" } ],
+						"body": { "mode": "raw", "raw": "{\n    \"username\": \"<script>alert('xss')</script>\",\n    \"password\": \"x\"\n}" }
+					}
+				},
+				{
+					"name": "Path Traversal (Blocked)",
+					"request": {
+						"method": "GET",
+						"url": { "raw": "http://localhost:9090/etc/passwd", "host": ["localhost"], "port": "9090", "path": ["etc", "passwd"] }
+					}
+				},
+				{
+					"name": "Get Balance (Rate Limit Test)",
+					"request": {
+						"method": "GET",
+						"url": { "raw": "http://localhost:9090/balance", "host": ["localhost"], "port": "9090", "path": ["balance"] }
+					}
+				}
+			]
+		}
+	]
+}
