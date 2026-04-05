@@ -1,0 +1,23 @@
+{
+  "server": {
+    "listen_port": 9090,
+    "backend_url": "http://localhost:8080"
+  },
+  "rate_limits": [
+    {
+      "path": "/login",
+      "method": "POST",
+      "limit": 5,
+      "window_seconds": 60
+    },
+    {
+      "path": "/balance",
+      "method": "GET",
+      "limit": 100,
+      "window_seconds": 60
+    }
+  ],
+  "security": {
+    "blacklisted_ips": ["192.168.1.10"]
+  }
+}

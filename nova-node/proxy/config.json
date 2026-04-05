@@ -1,0 +1,17 @@
+{
+  "server": {
+    "listen_port": 9090,
+    "backend_url": "http://localhost:8080"
+  },
+  "rate_limits": [
+    { "path": "/login",      "method": "POST", "limit": 5,   "window_seconds": 60 },
+    { "path": "/balance",    "method": "GET",  "limit": 100, "window_seconds": 60 },
+    { "path": "/transfer",   "method": "POST", "limit": 10,  "window_seconds": 60 },
+    { "path": "/getAllUsers", "method": "GET",  "limit": 100, "window_seconds": 60 }
+  ],
+  "security": {
+    "block_sql_injection": true,
+    "block_xss": true,
+    "blacklisted_ips": ["192.168.1.10", "203.0.113.42"]
+  }
+}
