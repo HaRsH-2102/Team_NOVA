@@ -1,0 +1,5 @@
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde_json-75a936239b610d75\build_script_build-75a936239b610d75.d: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_json-1.0.149\build.rs
+
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde_json-75a936239b610d75\build_script_build-75a936239b610d75.exe: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_json-1.0.149\build.rs
+
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde_json-1.0.149\build.rs:

@@ -1,0 +1,12 @@
+config:
+  target: "http://localhost:9090"
+  phases:
+    - duration: 30
+      arrivalRate: 200   # users/sec
+
+scenarios:
+  - flow:
+      - get:
+          url: "/getAllUsers"
+          headers:
+            x-forwarded-for: "{{ $randomNumber(1,255) }}.{{ $randomNumber(1,255) }}.{{ $randomNumber(1,255) }}.{{ $randomNumber(1,255) }}"

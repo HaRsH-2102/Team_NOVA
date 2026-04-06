@@ -1,0 +1,14 @@
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\serde-7b77145acdc0fa26.d: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde-9b76ea22f6fba3a5\out/private.rs
+
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\libserde-7b77145acdc0fa26.rlib: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde-9b76ea22f6fba3a5\out/private.rs
+
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\libserde-7b77145acdc0fa26.rmeta: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde-9b76ea22f6fba3a5\out/private.rs
+
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\lib.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\integer128.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\mod.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\de.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\serde-1.0.228\src\private\ser.rs:
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\build\serde-9b76ea22f6fba3a5\out/private.rs:
+
+# env-dep:OUT_DIR=D:\\working_projects\\Orchathon\\new\\x\\x\\backend\\rust_gateway\\target\\debug\\build\\serde-9b76ea22f6fba3a5\\out

@@ -1,0 +1,11 @@
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\socket2-e9e1e29c53fa5687.d: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockaddr.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\socket.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockref.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sys\windows.rs
+
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\libsocket2-e9e1e29c53fa5687.rlib: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockaddr.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\socket.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockref.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sys\windows.rs
+
+D:\working_projects\Orchathon\new\x\x\backend\rust_gateway\target\debug\deps\libsocket2-e9e1e29c53fa5687.rmeta: C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\lib.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockaddr.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\socket.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockref.rs C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sys\windows.rs
+
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\lib.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockaddr.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\socket.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sockref.rs:
+C:\Users\hp\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\socket2-0.4.10\src\sys\windows.rs:
