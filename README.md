@@ -1,8 +1,9 @@
 # Nova Shield
 
-# THis is the final product readme after reading this you can run the whole proxy server on your system. Just follow the readme
+### This is the final product readme after reading this you can run the whole proxy server on your system. 
+### Just follow the readme
 
-# Final directory is = Team_NOVA/NovaShield(Final_Product)
+### Final directory is = Team_NOVA/NovaShield(Final_Product)
 
 Rust-first API security gateway and demo banking backend with a live React dashboard, WebSocket telemetry, rate limiting, WAF checks, runtime blacklisting, and optional HTTPS/TLS.
 
